@@ -148,16 +148,39 @@ $ cat /c/Users/Plaza/.ssh/id_rsa.pub
       </li>
     </ul>
 
-git bash: dodajemy wszystkie pliki z bieżacego katalogu
+    git bash: dodajemy wszystkie pliki z bieżacego katalogu
 
-<details>
-    <summary>5</summary>
-    <pre>
-
-
+    <details>
+      <summary>5</summary>
+      <pre>
+        Plaza@DESKTOP-0T2URO6 MINGW64 /c/projects/GitTutorial (master)
+        $ git add .
+        warning: in the working copy of '.hintrc', LF will be replaced by CRLF the next time Git touches it
         
-    </pre>
-</details>
+        Plaza@DESKTOP-0T2URO6 MINGW64 /c/projects/GitTutorial (master)
+        $ git status
+        On branch master
+        
+        No commits yet
+        
+        Changes to be committed:
+          (use "git rm --cached &lt;file&gt;..." to unstage)
+                new file:   .hintrc
+                new file:   index.html      
+        Plaza@DESKTOP-0T2URO6 MINGW64 /c/projects/GitTutorial (master)     
+    </pre
+      >
+    </details>
+    Plik index.html wyświetla sie w edytorze bash na zielono, co oznacza, że
+    wszystkie operacje związane z commit będa brały tez pod uwagę ten plik.
 
+    <details>
+      <summary>6</summary>
+      <pre></pre>
+      Plaza@DESKTOP-0T2URO6 MINGW64 /c/projects/GitTutorial (master) $ git
+      commit -m "Initial" [master (root-commit) 1ed8131] Initial 2 files
+      changed, 168 insertions(+) create mode 100644 .hintrc create mode 100644
+      index.html
+    </details>
   </body>
 </html>
