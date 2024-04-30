@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git Tutorial</title>
+    <style>
+      body {
+        width: 70%;
+        margin: 20px auto;
+      }
+      pre {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Git Tutorial</h1>
+    <p>
+      <a
+        href="https://youtu.be/bYlzOy0ipSQ?si=jhEGwnTrk4z7xstU"
+        target="_blank"
+        rel="noopener"
+        s
+        >Git i Github - jak zacząć? Tutorial dla początkujących - cz1 | Kodilla
+      </a>
+    </p>
+    git bash: utwórz katalog c:\projects i c:\projects\GitTutorial i uruchom git
+    <details>
+      <summary>1</summary>
+      <pre>
+        Plaza@DESKTOP-0T2URO6 MINGW64 ~
+        $ cd C:
+        
+        Plaza@DESKTOP-0T2URO6 MINGW64 /c
+        $ mkdir projects
+        
+        Plaza@DESKTOP-0T2URO6 MINGW64 /c
+        $ cd c:/projects
+        
+        Plaza@DESKTOP-0T2URO6 MINGW64 /c/projects
+        $ mkdir GitTutorial
+        
+        Plaza@DESKTOP-0T2URO6 MINGW64 /c/projects
+        $ cd GitTutorial/
+        
+        Plaza@DESKTOP-0T2URO6 MINGW64 /c/projects/GitTutorial
+        $ git init 
+        Initialized empty Git repository in C:/projects/GitTutorial/.git/
+           </pre
+      >
+    </details>
+
+    git bash: otwórz edytor VSCode z bieżącego katalogu i utwórz plik
+    index.html, następnie sprawdź status
+    <details>
+      <summary>2</summary>
+      <pre>
+     Plaza@DESKTOP-0T2URO6 MINGW64 /c/projects/GitTutorial (master)
+    $ code .
+    
+    Plaza@DESKTOP-0T2URO6 MINGW64 /c/projects/GitTutorial (master)
+    $ git status
+    On branch master
+    
+    No commits yet
+    
+    Untracked files:
+      (use "git add &lt;file&gt;..." to include in what will be committed)
+            .hintrc
+            index.html
+    
+    nothing added to commit but untracked files present (use "git add" to track)
+    
+    Plaza@DESKTOP-0T2URO6 MINGW64 /c/projects/GitTutorial (master)
+    $
+    </pre
+      >
+    </details>
+    Aby wysyłać zawartość repozytorium lokalnego na serwer trzeba utworzyć
+    <b>kod ssh</b>, żeby przy każdym poleceniu <code>push</code> nie trzeba było
+    wpisywać swojego loginu i hasła.
+    <details>
+      <summary>3</summary>
+      <pre>
+Plaza@DESKTOP-0T2URO6 MINGW64 /c/projects/GitTutorial (master)
+            $ ssh-keygen -t rsa -b 4096 -C "barire31@gmail.com"
+            Generating public/private rsa key pair.
+            Enter file in which to save the key (/c/Users/Plaza/.ssh/id_rsa):
+            Created directory '/c/Users/Plaza/.ssh'.
+            Enter passphrase (empty for no passphrase):
+            Enter same passphrase again:
+            Your identification has been saved in /c/Users/Plaza/.ssh/id_rsa
+            Your public key has been saved in /c/Users/Plaza/.ssh/id_rsa.pub
+            The key fingerprint is:
+            SHA256:/oVhn3Pb7oT13eGt1fmFEJdiF1ojnamYhNoUhIXiIYk barire31@gmail.com
+            The key's randomart image is:
+            +---[RSA 4096]----+
+            | . .   =+o  ..+o |
+            |E o o o o .  +++ |
+            |   o o + . o=.+  |
+            |    . . . o..=   |
+            |        S o .  ..|
+            |       . . + o.+O|
+            |        . . = +oX|
+            |         . . o *o|
+            |          .   oo=|
+            +----[SHA256]-----+
+            
+            Plaza@DESKTOP-0T2URO6 MINGW64 /c/projects/GitTutorial (master)
+            $
+            </pre
+      >
+    </details>
+    Po utworzeniu kodu ssh trzeba go jeszcze przeniesc na stronę GitHub gdzie
+    zostanie on wklejony w ustawienia by mozna było swobodnie przenosić sobie
+    dane.<br />
+    Aby skopiować ten plik trzeba użyć komendy <code>cat</code>, która wyświetli
+    zawartość pliku w terminalu, a następnie link
+    <code>/c/Users/Plaza/.ssh/id_rsa.pub</code>, który został wygenerowany przez
+    nasz ssh-key gen.
+    <details>
+      <summary>4</summary>
+      <pre>
+$ cat /c/Users/Plaza/.ssh/id_rsa.pub
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC1PD0BCRrMrSLQuOg+uoFd3+9bPpXyR98m4CKXRvIml1fus2kDLh1mEFGoVQvmVgSnZU+Mri0tBMRCsQk26tPa20Rf9D1Ptv3p+5kpn8Gh5/elm0MJ7aJqhqoLt26S3pQYjj7/XlEgIdVrbq8lA3t4jNvZMQrsuJJXMy8ivSz9VUZKqGNhnHiqGEb/wxSMzoI4nkpTZ1+cb6MwUnFZgTHKO4dVKBZlY/dmKGqnJ8WGYte4Jr1Y+efofC9iajLLt/Z5WhwYMcFtOjfomsZHQ5n23adQN5b6rQ8aF5cs8FFdpLCrDqR9LF5l0MfFGJ89FZ7XPP+tOgzjIxR/qO6K236hi8omf2UjceW9mqkNs4cYW+gwSmlwyB/lXzagaKrUFQ+vt57AqBtGMcNfbZbsbbjYU9uj81/Y413OcB156HZJmWlt2DehNzzkBYEmY8hS3xOfTifiKkvaYJ0cZgiT/z+7mCKQHW2jrlLpYJ+QTrwteIjVqN4cn6qIazMKPNWlOozqVROuigiUyCefGt9TfxFI6rCuCFAFRTNdkOwEDuq+QDgmLGkN9qwxu75dzAsSZTRoOk5xU3Cw18cPJdcvQInqqU847SOIILRiicDO+Ylv62Ih691e</pre
+      >
+    </details>
+    Taki kod kopiujemy i wklejamy do ustawień na stronie
+    <code>https://github.com/barire31/</code>. <br />
+    W tym celu:
+    <ul>
+      <li>
+        wchodzimy na stronę
+        <a href="https://github.com/barire31/">https://github.com/barire31/</a>,
+      </li>
+      <li>
+        klikamy na nasze logo (w prawym górnym rogu) i wybieramy z lewego menu
+        <b>Settings</b>,
+      </li>
+      <li>
+        i następnie z prawego menu wymieramy
+        <b>SSH and GPG keys</b>
+      </li>
+      <li>
+        i przycisk <b>Add SSH Key</b> i wklejamy zawartość kodu, w okienku
+        tekstowym Title, nadajemy tytuł np. "Tutorial Key"
+      </li>
+    </ul>
+
+git bash: dodajemy wszystkie pliki z bieżacego katalogu
+
+<details>
+    <summary>5</summary>
+    <pre>
+
+
+        
+    </pre>
+</details>
+
+  </body>
+</html>
